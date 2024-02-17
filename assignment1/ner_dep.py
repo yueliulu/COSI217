@@ -42,7 +42,7 @@ class SpacyDocument:
     def get_dependency(self):
         parsed_text = []
         for token in self.doc:
-            parsed_text.append([token.text, token.dep_, token.head.text])
+            parsed_text.append((token.text, token.dep_, token.head.text))
         return parsed_text
 
 
