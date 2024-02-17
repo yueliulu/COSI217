@@ -39,25 +39,7 @@ def process(item: Item, pretty: bool = False):
     return answer
 
 
-@app.get('/ner')
-def process(item: Item, pretty: bool = False):
-    doc = ner_dep.SpacyDocument(item.text)
-    answer = {"input": item.text, "output": doc.get_entities()}
-    if pretty:
-        answer = prettify(answer)
-    return answer
-
-
 @app.post('/dep')
-def process(item: Item, pretty: bool = False):
-    doc = ner_dep.SpacyDocument(item.text)
-    answer = {"input": item.text, "output": doc.get_dependency()}
-    if pretty:
-        answer = prettify(answer)
-    return answer
-
-
-@app.get('/dep')
 def process(item: Item, pretty: bool = False):
     doc = ner_dep.SpacyDocument(item.text)
     answer = {"input": item.text, "output": doc.get_dependency()}
