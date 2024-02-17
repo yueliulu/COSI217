@@ -4,7 +4,6 @@ from operator import itemgetter
 import streamlit as st
 import pandas as pd
 import altair as alt
-from spacy import displacy
 import graphviz
 
 import ner_dep

@@ -23,8 +23,8 @@ def index(pretty: bool = False):
     content = "Content-Type: application/json"
     url = "http://127.0.0.1:8000/"
     answer = {
-        "description": "Interface to the spaCy entity extractor",
-        "usage": 'curl -H "%s" -d@input.txt %s' % (content, url)}
+        "description": "Interface to the spaCy entity extractor and spaCy dependency parser",
+        "usage": 'curl -H "%s" -d@input.json %s' % (content, url)}
     if pretty:
         answer = prettify(answer)
     return answer
