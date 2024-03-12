@@ -27,7 +27,6 @@ class Entity(db.Model):
     def pp(self):
         dependency = '<p>\n    '.join([str(d) for d in self.dep])
         return dependency
-        #return f"Entity(id={self.id} entity={self.entity} count={self.count})\n    {dependency})"
 
 
 class Dependency(db.Model):
@@ -81,12 +80,10 @@ def index():
             print(e[3])
             entity = Entity.query.filter_by(entity=e[3]).first()
             if entity:
-                print("yessssssss")
                 entity.count+=1
                 for dep in entities_dependency[e[3]]:
                     add_dependency(entity, dep)
             else:
-                print("nooooooooooo")
                 new_entity = Entity(entity=e[3], count=0)
                 new_entity.count += 1
                 db.session.add(new_entity)
