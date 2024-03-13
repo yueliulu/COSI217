@@ -25,7 +25,7 @@ class Entity(db.Model):
     dep = db.relationship('Dependency', backref='entity', lazy=True)
 
     def pp(self):
-        dependency = '<p>\n    '.join([str(d) for d in self.dep])
+        dependency = '<p>'.join([str(d) for d in self.dep])
         return dependency
 
 
@@ -39,7 +39,6 @@ class Dependency(db.Model):
 
     def __repr__(self):
         return f"{self.head} {self.dep} {self.text} {self.count}"
-        #return [self.head, self.dep, self.text, self.count]
 
 
 def add_dependency(entity, dep):
