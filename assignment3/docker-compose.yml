@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  fastapi:
+    build: ./RESTfulAPI
+    ports:
+      - "8000:8000"
+
+  flask:
+    build: ./Flask
+    ports:
+      - "5000:5000"
+
+  streamlit:
+    build: ./Streamlit
+    ports:
+      - "8501:8501"

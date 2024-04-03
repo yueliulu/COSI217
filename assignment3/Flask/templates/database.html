@@ -1,0 +1,16 @@
+<html>
+<body>
+    <h1>All database rows</h1>
+    <table cellpadding="5" cellspacing="0" border="1">
+        {% for d in data %}
+        <tr>
+            <td>{{ d.entity }}</td>
+            <td>{{ d.count }}</td>
+            <td>{{ d.pp() | safe }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="/">back to form</a></p>
+</body>
+</html>
+
